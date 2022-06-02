@@ -12,14 +12,12 @@ int main(void)
    printf("Enter measurement from the plumb to the outer corner of LEFT doubles & baseline (aka A) in millimeters: ");
    lineSize = getline(&line, &len, stdin);
 	A= atof(line);
-   free(line);
    
 	printf("Enter measurement from the plumb to the outer corner of RIGHT doubles & baseline (aka B) in millimeters: ");
    lineSize = getline(&line, &len, stdin);
 	B= atof(line);
-   free(line);
 
-   // printf("A=%0.2f B=%0.2f\n", A, B);
+   printf("With A=%0.1f B=%0.1f as inputs...\n", A, B);
 
 	#define FEET_TO_MM 304.8
 	#define DOUBLES_COURT_WIDTH_MM (72 * FEET_TO_MM)
@@ -33,7 +31,7 @@ int main(void)
 	Xworld = x1 - SINGLES_TO_DOUBLES_WIDTH_MM;
 	Yworld = y1 + HALF_COURT_LENGTH_MM;
 
-   printf("camera location in mm: X=%0.1f Y=%0.1f\n", Xworld, Yworld);
+   printf("... the camera location in mm: X=%0.1f Y=%0.1f\n", Xworld, Yworld);
    return 0;
 }
 /*
